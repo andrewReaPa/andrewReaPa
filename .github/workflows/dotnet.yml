@@ -1,27 +1,28 @@
-name: .NET
+name: Deploy master branch
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
-  build:
-
+  deploy:
+    name: deploy
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
       with:
-        dotnet-version: 5.0.x
-    - name: move to source
-      run: cd src/soecat-serverless/
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - name: serverless deploy
+      uses: serverless/github-action@master
+      with:
+        args: deploy
+      env:
+        AWS_ACCESS_KEY_ID: AKIAS3LL6I6S35FZCDIR
+        AWS_SECRET_ACCESS_KEY: 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
