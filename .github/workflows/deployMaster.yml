@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -23,6 +23,6 @@ jobs:
       uses: serverless/github-action@master
       with:
         args: deploy
-        env:
-          AWS_ACCESS_KEY_ID: AKIAS3LL6I6S35FZCDIR
-          AWS_SECRET_ACCESS_KEY: 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
+      env:
+        AWS_ACCESS_KEY_ID: AKIAS3LL6I6S35FZCDIR
+        AWS_SECRET_ACCESS_KEY: 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
