@@ -14,6 +14,9 @@ jobs:
             AWS_SECRET_ACCESS_KEY: 'AKIAS3LL6I6S35FZCDIR'
             AWS_ACCESS_KEY_ID: 'hfb7uHP2Q9h0vO5RkupZDzfFhJFcT83PXg+QKw4N'
     steps:
+    - name: Clean temp directory
+      run: rm -rf *
+      working-directory: ./temp
     - name: Checkout
       uses: actions/checkout@v2
     - name: Install VPC Plugin and Deploy
