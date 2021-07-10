@@ -9,6 +9,9 @@ jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./app
     strategy:
       matrix:
         node-version: [14.x]
