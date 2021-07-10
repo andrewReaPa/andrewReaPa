@@ -1,28 +1,27 @@
-name: Deploy
+name: GitHub Actions Deploy 
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   deploy:
-    name: Deployment
+    name: deploy
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        stages:
-          - stage: 'prod'
-            AWS_SECRET_ACCESS_KEY: 'AKIAS3LL6I6S35FZCDIR'
-            AWS_ACCESS_KEY_ID: 'hfb7uHP2Q9h0vO5RkupZDzfFhJFcT83PXg+QKw4N'
+        node-version: [14.x]
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Install VPC Plugin and Deploy
-      uses: serverless/github-action@v1.53.0
-      working-directory: ./temp
-      with:
-        args: -c "serverless plugin install --name serverless-vpc-discovery && serverless deploy --stage=${{ matrix.stages.stage }} --verbose"
-        entrypoint: /bin/bash
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets[matrix.stages.AWS_ACCESS_KEY_ID] }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets[matrix.stages.AWS_SECRET_ACCESS_KEY] }}
-        SLS_DEBUG: 1
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install
+      - run: yarn workspace @berry/shared build
+      - run: node ./node_modules/serverless/bin/serverless.js config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile papaya --overwrite
+      - run: node ../../node_modules/serverless/bin/serverless.js deploy --aws-s3-accelerate --stage dev --verbose
+        working-directory: ./services/id
+        env:
+          AWS_ACCESS_KEY_ID: AKIAS3LL6I6S35FZCDIR
+          AWS_SECRET_ACCESS_KEY: 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
+          SLS_DEBUG: 1
