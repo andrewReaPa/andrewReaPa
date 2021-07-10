@@ -17,7 +17,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
-      - run: yarn workspace @berry/shared build
       - run: node ./node_modules/serverless/bin/serverless.js config credentials --provider aws --key AKIAS3LL6I6S35FZCDIR --secret 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 --profile papaya --overwrite
       - run: node ../../node_modules/serverless/bin/serverless.js deploy --aws-s3-accelerate --stage dev --verbose
         working-directory: ./services/id
