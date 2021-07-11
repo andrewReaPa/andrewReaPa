@@ -22,7 +22,7 @@ jobs:
     - name: install dotnet
       run: npm i -g dotnet-3.1 
     - name: navigate to src
-      run: src/soecat-serverless
+      run: cd src/soecat-serverless
     - name: deploy serverless
       run: dotnet lambda deploy-serverless --stackname samplewebapi --profile personal --region eu-west-1 --s3-bucket serverlessapitest123
       env:
