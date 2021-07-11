@@ -21,8 +21,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: install dotnet
       run: npm i -g dotnet-3.1 
-    - name: install SDK
-      run: npm i -g dotnet-sdk-3.1 
     - name: navigate to src
       run: src/soecat-serverless
     - name: deploy serverless
