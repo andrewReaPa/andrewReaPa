@@ -36,4 +36,4 @@ jobs:
     - name: navigate to source
       run: cd src/soecat-serverless
     - name: deploy serverless
-      run: dotnet lambda deploy-serverless --stackname samplewebapi --template src/soecat-serverless/serverless.template --profile personal --region eu-west-1 --s3-bucket serverlessapitest123 --aws-access-key-id ${{ secrets.AWS_ACCESS_KEY_ID }} --aws-secret-key ${{ secrets.AWS_SECRET_ACCESS_KEY }}    
+      run: dotnet lambda deploy-serverless --stackname samplewebapi --template src/soecat-serverless/serverless.template --profile personal --region eu-west-1 --s3-bucket serverlessapitest123 --aws-access-key-id ${{ secrets.AWS_ACCESS_KEY_ID }} --aws-secret-key ${{ secrets.AWS_SECRET_ACCESS_KEY }}     
