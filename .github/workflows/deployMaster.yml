@@ -24,12 +24,14 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1.x' # SDK Version to use; x will use the latest version of the 3.1 channel
-- run: dotnet build
-    - name: Nav to source
-      run: cd src/soecat-serverless
-    - name: build dotnet
-      run: dotnet build
+        dotnet-version: 3.1.x # SDK Version to use; x will use the latest version of the 3.1 channel
+    - run: dotnet build
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
     - name: deploy serverless
       run: dotnet lambda deploy-serverless --stackname samplewebapi --profile personal --region eu-west-1 --s3-bucket serverlessapitest123
       env:
