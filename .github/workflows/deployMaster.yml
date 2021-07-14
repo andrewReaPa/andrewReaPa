@@ -19,10 +19,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: install dotnet
-      run: npm i -g dotnet-3.1 
-    - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v1.8.1
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x' # SDK Version to use; x will use the latest version of the 3.1 channel
+- run: dotnet build
     - name: Nav to source
       run: cd src/soecat-serverless
     - name: build dotnet
