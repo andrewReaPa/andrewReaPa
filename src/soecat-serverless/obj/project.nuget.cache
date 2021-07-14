@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FGyHAMQ/iXjVFJuR+butpAuG9+C8lqSZ35/bBd4b1OjFnozirAgZiGOcXuxwjmqoz088PxS2GRxZa58Slew4Nw==",
+  "dgSpecHash": "nQ7JjqmgHbAuBDc66nMWRAn5mJ/R8JlrHmj+IRhOpfpja47/PE9qckM/0cP/mSIoZ/SmALtEeMTToqIPUl5v5w==",
   "success": true,
-  "projectFilePath": "/Users/andrew.reapaconsulting.com/Documents/NIHR/soecat-serverless/src/soecat-serverless/soecat-serverless.csproj",
+  "projectFilePath": "/Users/andrew.reapaconsulting.com/Documents/NIHR1/andrewReaPa/src/soecat-serverless/soecat-serverless.csproj",
   "expectedPackageFiles": [
     "/Users/andrew.reapaconsulting.com/.nuget/packages/amazon.lambda.apigatewayevents/2.4.0/amazon.lambda.apigatewayevents.2.4.0.nupkg.sha512",
     "/Users/andrew.reapaconsulting.com/.nuget/packages/amazon.lambda.applicationloadbalancerevents/2.1.0/amazon.lambda.applicationloadbalancerevents.2.1.0.nupkg.sha512",
@@ -26,7 +26,8 @@
     "/Users/andrew.reapaconsulting.com/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.1.4/swashbuckle.aspnetcore.swaggerui.6.1.4.nupkg.sha512",
     "/Users/andrew.reapaconsulting.com/.nuget/packages/system.io.pipelines/4.7.2/system.io.pipelines.4.7.2.nupkg.sha512",
     "/Users/andrew.reapaconsulting.com/.nuget/packages/system.memory/4.5.0/system.memory.4.5.0.nupkg.sha512",
-    "/Users/andrew.reapaconsulting.com/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.0/system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
+    "/Users/andrew.reapaconsulting.com/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.0/system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
+    "/Users/andrew.reapaconsulting.com/.nuget/packages/microsoft.netcore.app.host.linux-x64/3.1.16/microsoft.netcore.app.host.linux-x64.3.1.16.nupkg.sha512"
   ],
   "logs": []
 }

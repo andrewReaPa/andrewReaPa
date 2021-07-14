@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/andrew.reapaconsulting.com/.dotnet/store/|arch|/|tfm|",
+      "/Users/andrew.reapaconsulting.com/.nuget/packages"
+    ]
+  }
+}
