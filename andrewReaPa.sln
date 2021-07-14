@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DBC29D13-8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "soecat-serverless", "src\soecat-serverless\soecat-serverless.csproj", "{9A74B45A-50B6-44C8-A2D7-F7778A61F18F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "soecat-serverless.Tests", "test\soecat-serverless\soecat-serverless.Tests.csproj", "{045DC8E9-8CA6-4B76-9C4A-781AB9589700}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "soecat-serverless.Tests", "test\soecat-serverless.Tests\soecat-serverless.Tests.csproj", "{045DC8E9-8CA6-4B76-9C4A-781AB9589700}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
