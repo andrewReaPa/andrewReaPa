@@ -31,6 +31,8 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: install aws tools
+      run: dotnet tool install -g Amazon.Lambda.Tools
     - name: deploy serverless
       run: dotnet lambda deploy-serverless --stackname samplewebapi --profile personal --region eu-west-1 --s3-bucket serverlessapitest123
       env:
